@@ -397,6 +397,10 @@ int ofApp::searchStringVector(vector<string> input) {
 
 //--------------------------------------------------------------
 void ofApp::keyPressed(int key){
+
+	if (key == 's') {
+		ofSaveScreen("screenshot.png");
+	}
 }
 
 //--------------------------------------------------------------
