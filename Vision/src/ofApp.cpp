@@ -21,23 +21,21 @@ void ofApp::update(){
 	leftEyeWidth = ofDist(tracker.getImagePoint(36).x, tracker.getImagePoint(36).y, tracker.getImagePoint(39).x, tracker.getImagePoint(39).y);
 	leftEyeHeight = ofDist(tracker.getImagePoint(37).x, tracker.getImagePoint(37).y, tracker.getImagePoint(41).x, tracker.getImagePoint(41).y);
 
-	if (prevLeft == leftEyeHeight || prevRight == rightEyeHeight) {
-		if (leftEyeHeight <= 0 || rightEyeHeight <= 0) {
-			ofSaveFrame();
-		}
-	}
 	prevLeft = leftEyeHeight;
 	prevRight = rightEyeHeight;
 }
 
 //--------------------------------------------------------------
 void ofApp::draw(){
-
+	camera.draw(0, 0);
+	//tracker.draw(true);
 }
 
 //--------------------------------------------------------------
 void ofApp::keyPressed(int key){
-
+	if (tracker.getImagePoint(42).x == 0) {
+		ofSaveFrame();
+	}
 }
 
 //--------------------------------------------------------------
